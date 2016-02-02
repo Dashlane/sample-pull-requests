@@ -1,13 +1,14 @@
+var languages = window.languages;
 var popups = window.AwesomePopups;
 
 window.contactUsFormSubmitted = function(isSuccess) {
   if (isSuccess) {
     popups.show({
       icon: 'icons/checkmark.png',
-      text: 'Thank you for contacting us!'
+      text: languages.translate('contact-us-success')
     });
   } else {
-    popups.showError('Sadly, we could not send the email.');
+    popups.showError(languages.translate('contact-us-failed'));
   }
 };
 
